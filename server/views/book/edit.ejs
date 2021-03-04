@@ -1,0 +1,49 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Edit page -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6" style=" margin:0 auto;">
+        <h1 class="text-center" style="margin-bottom: 30px;"><%= title %></h1>
+          <form class="form" method="post">
+            <div class="form-group">
+              <label for="nameTextField">Title</label>
+              <input type="text" class="form-control" id="nameTextField"
+              placeholder="Enter the Book Title" name="name" value="<%= books.name %>"required>
+            </div>
+            <div class="form-group">
+              <label for="authorTextField">Author</label>
+              <input type="text" class="form-control" id="authorTextField"
+              placeholder="Enter the author name" name="author" value="<%= books.author %>" required>
+            </div>
+            <div class="form-group">
+              <label for="publishedTextField">Published</label>
+              <input type="text" class="form-control" id="publishedTextField"
+              placeholder="Enter the year of publication" name="published" value="<%= books.published %>" required>
+            </div>
+            <div class="form-group">
+                <label for="priceTextField">Price</label>
+                <input type="number" class="form-control" id="priceTextField"
+                placeholder="Enter the book price" step="0.01" name="price" value="<%= books.price %>" required>
+              </div>
+              <div class="form-group">
+                <label for="descriptionTextField">Description</label>
+                <textarea id="descriptionTextField" class="form-control" type="text" name="description"
+                 placeholder="Enter the description" rows="4" cols="50" required><%= books.description %></textarea>
+              </div>
+
+              
+            <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
+            <a href="/book-list" class="btn btn-warning" style="margin-left: 130px;"><i class="fa fa-undo"></i> Cancel</a>
+            <a href="/book-list/delete/<%= books._id %>" class="btn btn-danger" style="float: right;"><i class="fas fa-trash-alt"></i> Delete</a>
+          </form>
+      </div>
+    </div>
+  </div>
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
