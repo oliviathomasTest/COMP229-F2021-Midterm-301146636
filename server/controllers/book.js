@@ -1,3 +1,4 @@
+/* controllers/book.js  Olivia Thomas  (301146636)  04-03-2021 */ 
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -47,9 +48,8 @@ module.exports.processAddPage = (req, res, next) => {
     });
 
 }
-/*
-Add your code here to display EDIT
-*/
+
+/* Displaying the Edit page  */
 module.exports.displayEditPage =(req, res, next) => {
     let id = req.params.id;
   Book.findById(id,(err,bookToEdit) =>{
@@ -64,9 +64,7 @@ module.exports.displayEditPage =(req, res, next) => {
       
   };
 
-/*
-Add your code here to process EDIT
-*/
+/* Processing  EDIT page - UPDATE operation */
 module.exports.processEditPage = (req, res, next) => {
 
     let id = req.params.id;
@@ -90,9 +88,7 @@ module.exports.processEditPage = (req, res, next) => {
     });
 };
 
-/*
-Add your code here to perform DELETE operation
-*/
+/* Processing Delete operation */
 module.exports.processDeletePage = (req, res, next) => {
     let id = req.params.id;
       Book.remove({_id : id},(err) => {

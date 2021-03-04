@@ -1,3 +1,4 @@
+/* routes/book.js  Olivia Thomas  (301146636)  04-03-2021 */ 
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -6,8 +7,6 @@ let mongoose = require('mongoose');
 let Book = require('../models/book');
 
 let bookController = require('../controllers/book');
-
-
 
 /* GET Route for the Book List page - READ Operation */
 router.get('/', bookController.displayBookList);
@@ -21,12 +20,10 @@ router.post('/add', bookController.processAddPage);
 /* GET Route for displaying the Edit page - UPDATE Operation */
 router.get('/edit/:id', bookController.displayEditPage);
 
-/* 
-* POST Route for processing the Edit page - UPDATE Operation */
+/* POST Route for processing the Edit page - UPDATE Operation */
 router.post('/edit/:id', bookController.processEditPage);
 
-/* 
-*  GET to perform  Deletion - DELETE Operation */
+/*  GET Route to perform  Deletion - DELETE Operation */
 router.get('/delete/:id', bookController.processDeletePage);
 
 module.exports = router;

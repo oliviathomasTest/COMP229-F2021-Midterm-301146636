@@ -3,7 +3,6 @@
 <%- include ../partials/main_nav.ejs %>
 
 <!-- Content for the Edit page -->
-
 <div class="container">
     <div class="row">
       <div class="col-md-offset-3 col-md-6" style=" margin:0 auto;">
@@ -35,9 +34,11 @@
                  placeholder="Enter the description" rows="4" cols="50" required><%= books.description %></textarea>
               </div>
 
-              
+              <!-- Submit Button -->
             <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
+             <!-- Cancel Button -->
             <a href="/book-list" class="btn btn-warning" style="margin-left: 130px;"><i class="fa fa-undo"></i> Cancel</a>
+            <!-- Delete Button -->
             <a href="/book-list/delete/<%= books._id %>" class="btn btn-danger" style="float: right;"><i class="fas fa-trash-alt"></i> Delete</a>
           </form>
       </div>
